@@ -1,0 +1,15 @@
+h = open("C:/Projecten/2017d1.txt")
+h = h.read()
+print(h)
+
+teller = 0
+e = 0
+while e < len(h):
+    if e < int(len(h)/2):
+        if int(h[e]) == int(h[e+(int(len(h)/2))]):
+            teller += int(h[e])
+    else:
+        if int(h[e]) == int(h[e-(int(len(h)/2))]):
+            teller += int(h[e])
+    e+=1
+print(teller)
