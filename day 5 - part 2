@@ -1,0 +1,24 @@
+h = open("C:/Projecten/2017d5.txt").read().splitlines()
+
+e = 0
+while e < len(h):
+    h[e] = int(h[e])
+    e+=1
+
+e = 0
+steps = 0
+counter = 0
+
+while e < len(h):
+    counter += 1
+    steps += h[e]
+    if steps > len(h):
+        print(steps)
+    temp = h[e]
+    if temp > 2:
+        h[e] -=1
+    else:
+        h[e] +=1
+    e = steps
+
+print(counter)
