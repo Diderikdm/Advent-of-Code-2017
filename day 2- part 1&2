@@ -1,0 +1,34 @@
+h = open("C:/Projecten/2017d2.txt")
+h = h.read().split("\t")
+
+list = []
+list2 = []
+for e in h:
+    if len(e) > 6:
+        a, b = e.split("\n")
+        list.append(int(a))
+        list2.append(list[:])
+        list.clear()
+        list.append(int(b))
+    else:
+        list.append(int(e))
+    if e == h[-1]:
+        list2.append(list[:])
+
+
+totaal = 0
+for e in list2:
+    totaal += (int(max(e))-int(min(e)))
+
+print(totaal)
+
+totaal2 = 0   
+for e in list2:
+    for f in e:
+        for g in e:
+            if int(f) > int(g):
+                if int(f)/int(g)%1 == 0.0:
+                    totaal2 += int(int(f)/int(g))
+                    
+
+print(totaal2)                    
