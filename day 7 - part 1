@@ -1,0 +1,27 @@
+h = open("C:/Projecten/2017d7.txt").read().splitlines()
+
+liststack = []
+
+for e in h:
+    if "->" in e:
+        liststack.append(e)
+
+print(liststack)
+progs = []
+stacks = []
+weights = []
+for e in liststack:
+    a, b = e.split(" -> ")
+    c, d = a.split(" ")
+    progs.append(c)
+    weights.append(d)
+    f = b.split(", ")
+    for g in f:
+        stacks.append(g)
+
+for e in progs:
+    if e not in stacks:
+        print(e)
+        
+      
+
