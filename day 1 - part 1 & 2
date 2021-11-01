@@ -1,15 +1,4 @@
-h = open("C:/Projecten/2017d1.txt")
-h = h.read()
-print(h)
-
-teller = 0
-e = 0
-while e < len(h):
-    if e < int(len(h)/2):
-        if int(h[e]) == int(h[e+(int(len(h)/2))]):
-            teller += int(h[e])
-    else:
-        if int(h[e]) == int(h[e-(int(len(h)/2))]):
-            teller += int(h[e])
-    e+=1
-print(teller)
+with open("C:\\Advent\\2017\\day1.txt", 'r') as file:
+    data = [int(x) for x in file.read()]
+    print(sum(x for e,x in enumerate(data) if data[(e+1)%len(data)] == x))
+    print(sum(x for e,x in enumerate(data) if data[(e+len(data)//2)%len(data)] == x))
