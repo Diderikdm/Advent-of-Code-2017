@@ -8,7 +8,7 @@ times = 1
 idx = 0
 p2 = None
 while i <= data:
-    for x in [[_ for _ in range(times)], [_ for _ in range(times)]]:
+    for x in [list(range(times))] * 2:
         for y in x:
             i += 1
             current = dirs(*current)[idx % 4]
