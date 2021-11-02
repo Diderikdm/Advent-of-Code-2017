@@ -13,7 +13,7 @@ with open("C:\\Advent\\2017\\day9.txt", 'r') as file:
                             data.pop(x)
                         excl = data[i:].index('!') if '!' in data else data[i:].index('>')
                         cls = data[i:].index('>')
-            cancelled += len(range(i+1, i + cls))
+            cancelled += len(range(i + 1, i + cls))
             for x in range(i + cls, i - 1, -1):
                 data.pop(x)
         else:
