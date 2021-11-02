@@ -18,7 +18,7 @@ with open("C:\\Advent\\2017\\day9.txt", 'r') as file:
                 data.pop(x)
         else:
             i += 1
-    data = [x for x in ''.join(data).replace(',','')]
+    data = [x for x in data if x != ',']
     total = 0
     times = 0
     for x in data:
