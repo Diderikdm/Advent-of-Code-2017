@@ -9,8 +9,8 @@ with open("day19.txt", 'r') as file:
         for x, what in enumerate(row):
             if what != ' ':
                 grid[(x,y)] = what
-    current = next(iter(k for k in grid.keys() if k[1] == 0), None)
-    dr = next(iter(k for k,v in dirs.items() if v(*current) in grid), None)
+    current = next(iter(k for k in grid.keys() if k[1] == 0))
+    dr = next(iter(k for k,v in dirs.items() if v(*current) in grid))
     string = ''
     i = 1
     while True:
