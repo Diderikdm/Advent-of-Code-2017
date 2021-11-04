@@ -2,8 +2,7 @@ with open("day20.txt", 'r') as file:
     data = [x for x in file.read().splitlines()]
     p, v, a = {}, {}, {}
     for e, part in enumerate(data):
-        q,r,s = [[int(u) for u in z] for z in [y.split(',') for y in [x.split('<')[1].strip('>') for x in part.split(', ')]]]
-        p[e], v[e], a[e] = q, r, s
+        p[e], v[e], a[e] = [[int(u) for u in z] for z in [y.split(',') for y in [x.split('<')[1].strip('>') for x in part.split(', ')]]]
     print(sorted(a.items(), key = lambda x: sum(abs(y) for y in x[1]))[0][0])
     while [x[0] for x in sorted(p.items(), key = lambda x:  sum(abs(y) for y in x[1]))] != \
           [x[0] for x in sorted(a.items(), key = lambda x: (sum(abs(y) for y in x[1]), sum(abs(y) for y in p[x[0]])))]:
@@ -21,3 +20,4 @@ with open("day20.txt", 'r') as file:
             p[e][1] += v[e][1]
             p[e][2] += v[e][2]
     print(len(p))
+
