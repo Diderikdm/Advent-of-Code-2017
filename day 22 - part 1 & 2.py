@@ -41,7 +41,3 @@ with open("day22.txt", 'r') as file:
             grid.pop(current)
         current = dirs[cur_dir[d]](*current)
     print(bursts)
-            
-            
-    
-            
