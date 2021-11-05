@@ -29,9 +29,9 @@ with open("day21.txt", 'r') as file:
     for i in range(18):
         temp = []
         t = 2 if len(prog) % 2 == 0 else 3
-        for y in range(int(len(prog)/t)):
+        for y in range(int(len(prog) / t)):
             res = ['' for x in range(t + 1)]
-            for x in range(int(len(prog)/t)):
+            for x in range(int(len(prog) / t)):
                 result = guide['/'.join([prog[y * t + z][x * t : (x + 1) * t] for z in range(t)])].split('/')
                 for e,z in enumerate(result):
                     res[e] += result[e]
