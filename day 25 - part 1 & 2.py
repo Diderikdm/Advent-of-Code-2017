@@ -6,7 +6,7 @@ with open("day25.txt", 'r') as file:
     lmd = {}
     for x in data[1:]:
         cur = [y.split()[-1].strip(':').strip('.') for y in x]
-        cur = [int(y) if y.isdigit() else y for y in cur]
+        cur = [int(y) if y.isdigit() else (1 if y == 'right' else (-1 if y == 'left' else y)) for y in cur]
         ops[cur[0]] = cur
         lmd[cur[0]] = lambda x,y : ops[x][2:5] if not y else ops[x][-3:]
     turing = {}
@@ -15,5 +15,5 @@ with open("day25.txt", 'r') as file:
         cur = 0 if i not in turing else turing[i]
         write, move, state = lmd[state](state, cur)
         turing[i] = write
-        i = i + (1 if move == 'right' else -1)
+        i += move
     print(sum(turing.values()))
